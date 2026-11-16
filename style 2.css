@@ -1,0 +1,136 @@
+/* ---------- 1. COLOURS AND FONTS (SINCE 1209 palette) ---------- */
+:root {
+  --burgundy: #6e1423;
+  --cream: #fbf4e6;
+  --blush: #f4c3cc;
+  --mustard: #e9b44c;
+  --ink: #2a0f14;
+  --heading-font: "Young Serif", Georgia, serif;
+  --body-font: "DM Sans", Arial, sans-serif;
+}
+
+/* ---------- 2. PAGE BASICS ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* ---------- 3. HEADER ---------- */
+.hero {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1.5rem;
+}
+
+h1 {
+  font-family: var(--heading-font);
+  color: var(--burgundy);
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.squiggle { display: block; width: min(18rem, 70%); margin: 0.5rem 0 1.2rem; }
+.lead { font-size: 1.3rem; max-width: 30rem; margin: 0 0 0.5rem; }
+.sub { margin: 0; color: var(--burgundy); font-weight: 500; }
+
+/* The playful touch: a tilted sticker */
+.sticker {
+  display: inline-block;
+  background: var(--blush);
+  color: var(--burgundy);
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--burgundy);
+  border-radius: 999px;
+  transform: rotate(-4deg);
+  margin: 0 0 1.5rem;
+}
+
+.photo { width: 8rem; height: 8rem; object-fit: cover; border-radius: 50%; border: 4px solid var(--burgundy); float: right; }
+
+nav { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+nav a { color: var(--burgundy); font-weight: 700; text-decoration: none; border-bottom: 3px solid var(--mustard); }
+nav a:hover { background: var(--mustard); }
+
+/* ---------- 4. MAIN CONTENT ---------- */
+main { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem 2rem; }
+section { padding-top: 2.5rem; }
+
+h2 { font-family: var(--heading-font); color: var(--burgundy); font-size: 1.9rem; margin: 0 0 1rem; font-weight: 400; }
+h3 { font-family: var(--heading-font); font-weight: 400; margin: 0 0 0.2rem; font-size: 1.25rem; }
+.meta { margin: 0 0 0.5rem; font-size: 0.92rem; opacity: 0.8; }
+
+/* ---------- 5. JOURNEY TIMELINE ---------- */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 1.6rem; border-left: 3px dashed var(--burgundy); }
+.timeline li { position: relative; padding-bottom: 1.3rem; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -2.2rem;
+  top: 0.45rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--mustard);
+  border: 3px solid var(--burgundy);
+  border-radius: 50%;
+}
+.timeline strong { display: block; color: var(--burgundy); }
+
+/* ---------- 6. VENTURES: burgundy "books", each slightly tilted ---------- */
+.book {
+  background: var(--burgundy);
+  color: var(--cream);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1.1rem;
+  border-radius: 6px 14px 14px 6px;
+  border-left: 12px solid var(--mustard);
+}
+.book p { margin: 0; }
+.book .meta { opacity: 0.85; }
+.book-a { transform: rotate(-0.8deg); }
+.book-b { transform: rotate(0.7deg); }
+.book-c { transform: rotate(-0.5deg); }
+
+/* ---------- 7. PROJECTS (click to open) ---------- */
+details { border-bottom: 2px solid var(--burgundy); padding: 0.7rem 0; }
+summary { cursor: pointer; font-family: var(--heading-font); font-size: 1.2rem; color: var(--burgundy); }
+details p { margin: 0.6rem 0 0; }
+
+/* ---------- 8. SKILL CHIPS ---------- */
+.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.chips li { background: var(--blush); border: 2px solid var(--burgundy); border-radius: 999px; padding: 0.2rem 1rem; }
+.chips li:nth-child(even) { transform: rotate(-2deg); background: var(--mustard); }
+.chips li:nth-child(3n) { transform: rotate(2deg); }
+
+/* ---------- 9. CONTACT ---------- */
+.button {
+  display: inline-block;
+  background: var(--burgundy);
+  color: var(--cream);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--mustard);
+}
+.button:hover { box-shadow: 2px 2px 0 var(--mustard); }
+.links { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+.links li { margin-bottom: 0.4rem; }
+a { color: var(--burgundy); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--mustard); outline-offset: 3px; }
+
+footer { margin-top: 2rem; background: var(--burgundy); color: var(--cream); text-align: center; padding: 1.2rem; font-size: 0.9rem; }
+footer p { margin: 0; }
+
+/* ---------- 10. PHONES ---------- */
+@media (max-width: 600px) {
+  .hero { padding-top: 2.5rem; }
+  .photo { float: none; display: block; margin-bottom: 1rem; }
+}
